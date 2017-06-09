@@ -226,7 +226,11 @@ const DatePicker = React.createClass<IDatePickerProps, any>({
         label,
       });
     }
-    return [
+    return this.props.locale === 'fr_FR' ? [
+      { key: 'day', props: { children: days } },
+      monthCol,
+      yearCol,
+    ] : [
       yearCol,
       monthCol,
       { key: 'day', props: { children: days } },
